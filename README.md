@@ -1,6 +1,6 @@
 # DataDome OpenResty demo
 
-This repo tests the DataDome OpenResty module using docker.
+This repository provides an example of the DataDome OpenResty module using Docker.
 
 For additional information, please check our [public documentation](https://docs.datadome.co/docs/openresty)
 
