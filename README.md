@@ -26,7 +26,7 @@ docker run -d --rm --name myDataDomeOpenResty -p 8282:80 my-datadome-openresty-i
 curl -v  http://localhost:8282/
 ```
 
-You should be able to see DataDome cookie
+Your request was protected (the header `X-DataDome: protected` is present) and is shown in your Dashboard.
 
 ## 5 - Logs
 
