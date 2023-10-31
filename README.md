@@ -6,7 +6,7 @@ For additional information, please check our [public documentation](https://docs
 
 ## 1 - Configuration
 
-Open the file `nginx.conf` and set your `server-side-key` (found inside your [DataDome Dashboard](https://app.datadome.co/dashboard/management/integrations)).
+Open the file `nginx.conf` and set your `datadome-server-side-key` (found inside your [DataDome Dashboard](https://app.datadome.co/dashboard/management/integrations)).
 
 ## 2 - Build
 
