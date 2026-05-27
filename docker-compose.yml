@@ -1,0 +1,9 @@
+services:
+  openresty:
+    build: .
+    container_name: datadome-openresty
+    ports:
+      - "8282:80"
+    environment:
+      DATADOME_SERVER_SIDE_KEY: ${DATADOME_SERVER_SIDE_KEY:?DATADOME_SERVER_SIDE_KEY must be set}
+      DATADOME_ENDPOINT: ${DATADOME_ENDPOINT:?DATADOME_ENDPOINT must be set}

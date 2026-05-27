@@ -1,41 +1,42 @@
 # DataDome OpenResty demo
 
-This repository provides an example of the DataDome OpenResty module using Docker.
+This repository provides an example of the DataDome OpenResty module using Docker Compose.
 
 For additional information, please check our [public documentation](https://docs.datadome.co/docs/openresty).
 
 ## 1 - Configuration
 
-Open the file `nginx.conf` and set your `datadome-server-side-key` (found inside your [DataDome Dashboard](https://app.datadome.co/dashboard/management/integrations)).
-
-## 2 - Build
+Export your DataDome server-side key (found inside your [DataDome Dashboard](https://app.datadome.co/dashboard/management/integrations)) and the DataDome endpoint:
 
 ```
-docker image build . -t my-datadome-openresty-image
+export DATADOME_SERVER_SIDE_KEY=your-server-side-key
+export DATADOME_ENDPOINT=api.datadome.co
 ```
 
-## 3 - Run
+If `DATADOME_SERVER_SIDE_KEY` or `DATADOME_ENDPOINT` is not set, `docker compose up` will fail with an explicit error.
+
+## 2 - Run
 
 ```
-docker run -d --rm --name myDataDomeOpenResty -p 8282:80 my-datadome-openresty-image
+docker compose up -d
 ```
 
-## 4 - Test
+## 3 - Test
 
 ```
-curl -v  http://localhost:8282/
+curl -v http://localhost:8282/
 ```
 
 Your request was protected (the header `X-DataDome: protected` is present) and is shown in your Dashboard.
 
-## 5 - Logs
+## 4 - Logs
 
 ```
-docker logs -f myDataDomeOpenResty
+docker compose logs -f
 ```
 
-## 6 - Stop
+## 5 - Stop
 
 ```
-docker stop  myDataDomeOpenResty
+docker compose down
 ```
